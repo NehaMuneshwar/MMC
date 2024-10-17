@@ -1,0 +1,535 @@
+{
+  "_version": "1.53.0",
+  "sap.app": {
+    "id": "com.ibs.materialcreate.procurmentdata",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.13.6",
+      "toolsId": "25d9c597-7693-4f7c-9683-f0e7632a64a6"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZZ1_PLANT_CDS/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "mainService1": {
+        "uri": "/sap/opu/odata/sap/I_MATERIALTYPETEXT_CDS/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "procurmentdata-Display": {
+          "semanticObject": "procurmentdata",
+          "action": "Display",
+          "title": "{{flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.114.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.ibs.materialcreate.procurmentdata.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      },
+      "materialtype": {
+        "dataSource": "mainService1",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "com.ibs.materialcreate.procurmentdata.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteView1",
+          "pattern": ":?query:",
+          "target": [
+            "TargetView1"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetView1": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "View1",
+          "viewName": "View1"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.ibs.materialcreate.procurmentdata.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "MaterialMasterProcessApprouter"
+  },
+  "sap.bpa.task": {
+    "_version": "1.0.0",
+    "outcomes": [
+      {
+        "id": "submit",
+        "label": "Submit"
+      }
+    ],
+    "inputs": {
+      "$schema": "http://json-schema.org/draft-07/schema",
+      "title": "input",
+      "type": "object",
+      "required": [
+        "MATERIALTYPE",
+        "PLANT",
+        "Company",
+        "StorageLocation",
+        "MATERIALGROUPTEXT",
+        "UNITOFMEASURE",
+        "GenItem",
+        "Division",
+        "Dimension",
+        "MaterialDescription",
+        "storagebin",
+        "MinimumRemainingShelfLine",
+        "totalshelfline",
+        "controlcode",
+        "Taxcategory",
+        "PurchasingGroup",
+        "PurchasingOrderunitofmeasure",
+        "PurchasengValueKey",
+        "MRPGroup",
+        "ABCIndicator",
+        "Level1",
+        "Level2",
+        "Level3",
+        "Level4",
+        "Level5",
+        "Maxlevel",
+        "count",
+        "SalesOrganization",
+        "DistributionChannel"
+
+      ],
+      "properties": {
+        "MATERIALTYPE": {
+          "type": "string",
+          "title": "MATERIALTYPE",
+          "description": "MATERIALTYPE"
+        },
+        "PLANT": {
+          "type": "string",
+          "title": "PLANT",
+          "description": "PLANT"
+        },
+        "Company": {
+          "type": "string",
+          "title": "Company",
+          "description": "Company"
+        },
+        "StorageLocation": {
+          "type": "string",
+          "title": "StorageLocation",
+          "description": "StorageLocation"
+        },
+        "MATERIALGROUPTEXT": {
+          "type": "string",
+          "title": "MATERIALGROUPTEXT",
+          "description": "MATERIALGROUPTEXT"
+        },
+        "UNITOFMEASURE": {
+          "type": "string",
+          "title": "UNITOFMEASURE",
+          "description": "UNITOFMEASURE"
+        },
+        "GenItem": {
+          "type": "string",
+          "title": "GenItem",
+          "description": "GenItem"
+        },
+        "Division": {
+          "type": "string",
+          "title": "Division",
+          "description": "Division"
+        },
+        "Dimension": {
+          "type": "string",
+          "title": "Dimension",
+          "description": "Dimension"
+        },
+        "MaterialDescription": {
+          "type": "string",
+          "title": "MaterialDescription",
+          "description": "MaterialDescription"
+        },
+        "storagebin": {
+          "type": "string",
+          "title": "storagebin",
+          "description": "storagebin"
+        },
+        "MinimumRemainingShelfLine": {
+          "type": "string",
+          "title": "MinimumRemainingShelfLine",
+          "description": "MinimumRemainingShelfLine"
+        },
+        "totalshelfline": {
+          "type": "string",
+          "title": "totalshelfline",
+          "description": "totalshelfline"
+        },
+        "controlcode": {
+          "type": "string",
+          "title": "controlcode",
+          "description": "controlcode"
+        },
+        "Taxcategory": {
+          "type": "string",
+          "title": "Taxcategory",
+          "description": "Taxcategory"
+        },
+        "PurchasingGroup": {
+          "type": "string",
+          "title": "PurchasingGroup",
+          "description": "PurchasingGroup"
+        },
+        "PurchasingOrderunitofmeasure": {
+          "type": "string",
+          "title": "PurchasingOrderunitofmeasure",
+          "description": "PurchasingOrderunitofmeasure"
+        },
+        "PurchasengValueKey": {
+          "type": "string",
+          "title": "PurchasengValueKey",
+          "description": "PurchasengValueKey"
+        },
+        "MRPGroup": {
+          "type": "string",
+          "title": "MRPGroup",
+          "description": "MRPGroup"
+        },
+        "ABCIndicator": {
+          "type": "string",
+          "title": "ABCIndicator",
+          "description": "ABCIndicator"
+        },
+        "Level1": {
+          "type": "string",
+          "title": "Level1",
+          "description": "Level1"
+        },
+        "Level2": {
+          "type": "string",
+          "title": "Level2",
+          "description": "Level2"
+        },
+        "Level3": {
+          "type": "string",
+          "title": "Level3",
+          "description": "Level3"
+        },
+        "Level4": {
+          "type": "string",
+          "title": "Level4",
+          "description": "Level4"
+        },
+        "Level5": {
+          "type": "string",
+          "title": "Level5",
+          "description": "Level5"
+        },
+        "Maxlevel": {
+          "type": "number",
+          "title": "Maxlevel",
+          "description": "Maxlevel"
+        },
+        "count": {
+          "type": "number",
+          "title": "count",
+          "description": "count"
+        },
+        "SalesOrganization": {
+          "type": "number",
+          "title": "SalesOrganization",
+          "description": "SalesOrganization"
+        },
+        "DistributionChannel": {
+          "type": "number",
+          "title": "DistributionChannel",
+          "description": "DistributionChannel"
+        }
+
+
+
+
+
+
+      }
+    },
+    "outputs": {
+      "$schema": "http://json-schema.org/draft-07/schema",
+      "title": "output",
+      "type": "object",
+      "required": [
+        "MATERIALTYPE",
+        "PLANT",
+        "Company",
+        "StorageLocation",
+        "MATERIALGROUPTEXT",
+        "UNITOFMEASURE",
+        "GenItem",
+        "Division",
+        "Dimension",
+        "MaterialDescription",
+        "storagebin",
+        "MinimumRemainingShelfLine",
+        "totalshelfline",
+        "controlcode",
+        "Taxcategory",
+        "PurchasingGroup",
+        "PurchasingOrderunitofmeasure",
+        "PurchasengValueKey",
+        "MRPGroup",
+        "ABCIndicator",
+        "Level1",
+        "Level2",
+        "Level3",
+        "Level4",
+        "Level5",
+        "Maxlevel",
+        "count",
+        "SalesOrganization",
+        "DistributionChannel"
+      ],
+      "properties": {
+        "MATERIALTYPE": {
+          "type": "string",
+          "title": "MATERIALTYPE",
+          "description": "MATERIALTYPE"
+        },
+        "PLANT": {
+          "type": "string",
+          "title": "PLANT",
+          "description": "PLANT"
+        },
+        "Company": {
+          "type": "string",
+          "title": "Company",
+          "description": "Company"
+        },
+        "StorageLocation": {
+          "type": "string",
+          "title": "StorageLocation",
+          "description": "StorageLocation"
+        },
+        "MATERIALGROUPTEXT": {
+          "type": "string",
+          "title": "MATERIALGROUPTEXT",
+          "description": "MATERIALGROUPTEXT"
+        },
+        "UNITOFMEASURE": {
+          "type": "string",
+          "title": "UNITOFMEASURE",
+          "description": "UNITOFMEASURE"
+        },
+        "GenItem": {
+          "type": "string",
+          "title": "GenItem",
+          "description": "GenItem"
+        },
+        "Division": {
+          "type": "string",
+          "title": "Division",
+          "description": "Division"
+        },
+        "Dimension": {
+          "type": "string",
+          "title": "Dimension",
+          "description": "Dimension"
+        },
+        "MaterialDescription": {
+          "type": "string",
+          "title": "MaterialDescription",
+          "description": "MaterialDescription"
+        },
+        "storagebin": {
+          "type": "string",
+          "title": "storagebin",
+          "description": "storagebin"
+        },
+        "MinimumRemainingShelfLine": {
+          "type": "string",
+          "title": "MinimumRemainingShelfLine",
+          "description": "MinimumRemainingShelfLine"
+        },
+        "totalshelfline": {
+          "type": "string",
+          "title": "totalshelfline",
+          "description": "totalshelfline"
+        },
+        "controlcode": {
+          "type": "string",
+          "title": "controlcode",
+          "description": "controlcode"
+        },
+        "Taxcategory": {
+          "type": "string",
+          "title": "Taxcategory",
+          "description": "Taxcategory"
+        },
+        "PurchasingGroup": {
+          "type": "string",
+          "title": "PurchasingGroup",
+          "description": "PurchasingGroup"
+        },
+        "PurchasingOrderunitofmeasure": {
+          "type": "string",
+          "title": "PurchasingOrderunitofmeasure",
+          "description": "PurchasingOrderunitofmeasure"
+        },
+        "PurchasengValueKey": {
+          "type": "string",
+          "title": "PurchasengValueKey",
+          "description": "PurchasengValueKey"
+        },
+        "MRPGroup": {
+          "type": "string",
+          "title": "MRPGroup",
+          "description": "MRPGroup"
+        },
+        "ABCIndicator": {
+          "type": "string",
+          "title": "ABCIndicator",
+          "description": "ABCIndicator"
+        },
+        "Level1": {
+          "type": "string",
+          "title": "Level1",
+          "description": "Level1"
+        },
+        "Level2": {
+          "type": "string",
+          "title": "Level2",
+          "description": "Level2"
+        },
+        "Level3": {
+          "type": "string",
+          "title": "Level3",
+          "description": "Level3"
+        },
+        "Level4": {
+          "type": "string",
+          "title": "Level4",
+          "description": "Level4"
+        },
+        "Level5": {
+          "type": "string",
+          "title": "Level5",
+          "description": "Level5"
+        },
+        "Maxlevel": {
+          "type": "number",
+          "title": "Maxlevel",
+          "description": "Maxlevel"
+        },
+        "count": {
+          "type": "number",
+          "title": "count",
+          "description": "count"
+        },
+        "SalesOrganization": {
+          "type": "number",
+          "title": "SalesOrganization",
+          "description": "SalesOrganization"
+        },
+        "DistributionChannel": {
+          "type": "number",
+          "title": "DistributionChannel",
+          "description": "DistributionChannel"
+        }
+      }
+    },
+    "category": "standard"
+  }
+}

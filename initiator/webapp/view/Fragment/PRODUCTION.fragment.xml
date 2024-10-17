@@ -1,0 +1,126 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+		xmlns:l="sap.ui.layout">
+		 <VBox>
+		<f:SimpleForm 
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title=""
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="2"
+			singleContainerFullSize="false" >
+			<f:content>
+				<core:Title text="" />
+				<Label text="MRP Group" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/MRP_GROUP}" editable="false" change="OnProduction"/>
+                <Text text="{SubProcessContext>/production_plant/MRP_GROUP_TEXT}"></Text>
+
+				<Label text="ABC Indicator" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/ABC_INDICATOR}" editable="false" change="OnProduction"></Input>
+                 <Text text="{SubProcessContext>/production_plant/ABC_INDICATOR_TEXT}"></Text>
+
+				<Label text="MRP Type" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/MRP_TYPE}" editable="false" change="OnProduction"></Input>
+                <Text text="{SubProcessContext>/production_plant/MRP_TYPE_TEXT}"></Text>
+
+				<Label text="MRP Controller" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/MRP_CONTROLLER}" editable="false" change="OnProduction"></Input>
+                <Text text="{SubProcessContext>/production_plant/MRP_CONTROLLER_TEXT}"></Text> 
+
+				<Label text="Reorder Point" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/REORDER_POINT}" editable="false" change="OnProduction"></Input>
+
+				<Label text="Lot Sizing Procedure" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/LOT_SIZING_PROC}" editable="false" change="OnProduction"></Input>
+                <Text text="{SubProcessContext>/production_plant/LOT_SIZING_PROCEDURE_TEXT}"></Text> 
+
+                 <Label text="Safety Stock" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/SAFETY_STOCK}" editable="false" change="OnProduction"/>
+
+				 <Label text="Minimum Safety Stock" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/MINIMUM_SAFETY_STOCK}" editable="false" change="OnProduction"/>
+
+                <Label text="Safety Time Indicator" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/SAFETY_TIME_INDICATOR}" editable="false" change="OnProduction"/>
+
+                 <Label text="Planning Strategy Group" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/PLANNING_STRATEGY_GROUP}" editable="false" change="OnProduction"/>
+
+                <Label text="Dependent Requirement For Individual" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/DEPENDENT_REQUIREMENT_FOR_INDIVIDUAL}" editable="false" change="OnProduction"/>
+
+				 <Label text="Repetative Manufacturing Allowed" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/REPETATIVE_MANUFACTURING_ALLOWED}" editable="false" change="OnProduction"/>
+
+                 <Label text="Repetative Manufacturing profile" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/REPETATIVE_MANUFACTURING_PROFILE}" editable="false" change="OnProduction"/>
+
+				
+
+				<core:Title text="" />
+				<Label text="Fixed Lot Size" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/FIXED_LOT_SIZE}" editable="false" change="OnProduction"></Input>
+
+				<Label text="Max Stock Level" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/MAX_STOCK_LEVEL}" editable="false" change="OnProduction"></Input>
+
+				<Label text="Assembly Scrap Percentage" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/ASSEMBLY_SCRAP_PERCENTAGE}" editable="false" change="OnProduction"></Input>
+
+				<Label text="Rounding Profile" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/ROUNDING_PROFILE}" editable="false" change="OnProduction"></Input>
+
+				<Label text="Procurement Type" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/PROCUREMENT_TYPE}" editable="false" change="OnProduction"></Input>
+              <Text text="{SubProcessContext>/production_plant/PROCUREMENT_TYPE_TEXT}"></Text> 
+
+			  <Label text="Scheduling Margin Key" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/SCHEDULING_MARGIN_KEY}" editable="false" change="OnProduction"></Input>
+              <Text text="{SubProcessContext>/production_plant/SCHEDULING_MARGIN_KEY_TEXT}"></Text> 
+
+			  <Label text="Stock Determination Group" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/STOCK_DETERMINATION_GROUP}" editable="false" change="OnProduction"></Input>
+              <Text text="{SubProcessContext>/production_plant/SCHEDULING_MARGIN_KEY_TEXT}"></Text> 
+
+			   <Label text="Prod Storage Location" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/PROD_STORAGE_LOCATION}" editable="false" change="OnProduction"></Input>
+              <Text text="{SubProcessContext>/production_plant/SCHEDULING_MARGIN_KEY_TEXT}"></Text> 
+
+				<Label text="Special Procurement Type" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/SPECIAL_PROCUREMENT_TYPE}" editable="false" change="OnProduction"></Input>
+              <Text text="{SubProcessContext>/production_plant/SPECIAL_PROCUREMENT_TYPE_TEXT}"></Text> 
+
+				<Label text="Indicator Backflush" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/INDICATOR_BACKFLUSH}" editable="false" change="OnProduction"></Input>
+                <Text text="{SubProcessContext>/production_plant/INDICATOR_BACKFLUSH_TEXT}"></Text> 
+
+				<Label text="Storage Location for External Procurement" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/STORAGE_LOCATION_FOR_EXTERNAL_PROC}" editable="false" change="OnProduction"></Input>
+                  <Text text="{SubProcessContext>/production_plant/STORAGE_LOCATION_FOR_EXTERNAL_PROC_TEXT}"></Text> 
+
+				<Label text="Minimum Lot Size" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/MINIMUM_LOT_SIZE}" editable="false" change="OnProduction"></Input>
+
+				<Label text="Maximum Lot Size" design="Bold"/>
+				<Input value="{SubProcessContext>/production_plant/MAXIMUM_LOT_SIZE}" editable="false" change="OnProduction"></Input>
+
+
+				<Text ></Text>
+				<Text ></Text>
+				</f:content>
+		</f:SimpleForm>
+  
+    </VBox>
+</core:FragmentDefinition>

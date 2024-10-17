@@ -1,0 +1,275 @@
+{
+  "_version": "1.53.0",
+  "sap.app": {
+    "id": "com.ibs.materialcreate.initiator",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.13.6",
+      "toolsId": "8bb55aad-51b6-4be8-9087-d3ef6a8f4342"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZZ1_VALUATIONAREA_CDS/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "mainService1": {
+        "uri": "/sap/opu/odata/sap/I_MATERIALGROUPTEXT_CDS/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "mainService2": {
+        "uri": "/sap/opu/odata/sap/I_MATERIALTYPETEXT_CDS/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "mainService3": {
+        "uri": "/sap/opu/odata/sap/ZZ1_UNITOFMEASURE_CDS/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "mainService4": {
+        "uri": "/sap/opu/odata/sap/Z_DIVISION_CDS/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "mainService5": {
+        "uri": "/sap/opu/odata/sap/ZZ1_STORAGELOCATION_CDS/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "mainService6": {
+        "uri": "/sap/opu/odata/sap/ZZ1_COMPANY_CDS/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "mainService7": {
+        "uri": "/sap/opu/odata/sap/ZZ1_GENITEMCATGROUP_CDS/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "intiator-Display": {
+          "semanticObject": "intiator",
+          "action": "Display",
+          "title": "{{flpTitle}}",
+          "icon": "sap-icon://add",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+   "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "fullWidth": true
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.114.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.ibs.materialcreate.initiator.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      },
+      "materialtype": {
+        "dataSource": "mainService1",
+        "preload": true,
+        "settings": {}
+      },
+      "MaterialTypeModel": {
+        "dataSource": "mainService2",
+        "preload": true,
+        "settings": {}
+      },
+      "UnitOfMeasure": {
+        "dataSource": "mainService3",
+        "preload": true,
+        "settings": {}
+      },
+      "Division": {
+        "dataSource": "mainService4",
+        "preload": true,
+        "settings": {}
+      },
+      "StorageLocation": {
+        "dataSource": "mainService5",
+        "preload": true,
+        "settings": {}
+      },
+      "CompanyModel": {
+        "dataSource": "mainService6",
+        "preload": true,
+        "settings": {}
+      },
+      "GenItems": {
+        "dataSource": "mainService7",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "async": true,
+        "viewType": "XML",
+        "viewPath": "com.ibs.materialcreate.initiator.view",
+        "controlAggregation": "pages",
+        "controlId": "splitapp",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "route",
+          "target": [
+            "master",
+            "view1"
+          ]
+        },
+        {
+          "pattern": "navView1/:rootInstanceId:/:materialNumber:/:startedAt:",
+          "name": "route1",
+          "target": [
+            "master",
+            "view1"
+          ]
+        },
+        {
+          "pattern": "navView2",
+          "name": "route2",
+          "target": [
+            "master",
+            "view2"
+          ]
+        },
+        {
+          "pattern": "navView3",
+          "name": "route3",
+          "target": [
+            "master",
+            "View3"
+          ]
+        }
+      ],
+      "targets": {
+        "master": {
+          "viewType": "XML",
+          "viewName": "Master",
+          "controlAggregation": "masterPages"
+        },
+        "view1": {
+          "viewType": "XML",
+          "viewName": "View1",
+          "controlAggregation": "detailPages"
+        },
+        "view2": {
+          "viewType": "XML",
+          "viewName": "View2",
+          "controlAggregation": "detailPages"
+        },
+        "view3": {
+          "viewType": "XML",
+          "viewName": "View3",
+          "controlAggregation": "detailPages"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.ibs.materialcreate.initiator.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "MaterialMasterProcessApprouter"
+  }
+}

@@ -1,0 +1,98 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+		xmlns:l="sap.ui.layout">
+		 <VBox>
+		<f:SimpleForm 
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title=""
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="2"
+			singleContainerFullSize="false" >
+			<f:content>
+				<core:Title text="" />
+				<Label text="Purchasing Group" design="Bold"/>
+				<Input value="{SubProcessContext>/procurement/PURCHASING_GROUP}" editable="false"/>
+				<Text text="{SubProcessContext>/procurement/PURCHASING_GROUP_TEXT}"></Text>
+				<!-- <Input value="{context>/procurement/PURCHASING_GROUP}" editable="{context>/PROCUREMENT}" change="procurementChange"/> -->
+
+				<Label text="Purchasing Unit of Measure" design="Bold"/>
+				<Input value="{SubProcessContext>/procurement/PO_UNIT_OF_MEASURE}" editable="false"/>
+				<Text text="{SubProcessContext>/procurement/PO_UNIT_OF_MEASURE_TEXT}"></Text>
+				
+				<Label text="Purchasing Value Key" design="Bold"/>
+				<Input value="{SubProcessContext>/procurement/PURCHASING_VALUE_KEY}" editable="false"/>
+				<Text text="{SubProcessContext>/procurement/PURCHASING_VALUE_KEY_TEXT}"></Text>
+
+				<Label text="Good Receipt Processing Time" design="Bold"/>
+				<Input value="{SubProcessContext>/procurement/GOOD_RECIEPT_PROCESSING_TIME}" editable="false" change="procurementChange"></Input>
+
+				<Label text="Automatic PO Allowed" design="Bold"/>
+				<Input value="{SubProcessContext>/procurement/AUTOMATIC_PO_ALLOWED}" editable="false" change="procurementChange"></Input>
+
+				<Label text="Alternative UOM To Stockkeeping" design="Bold"/>
+				<Input value="{SubProcessContext>/procurement/ALTERNATIVE_UOM_TO_STOCKKEEPING}" editable="false" change="procurementChange"></Input>
+
+				<Label text="Denominator Conversion To BUOM" design="Bold"/>
+				<Input value="{SubProcessContext>/procurement/DENOMINATOR_CONVERSION_TO_BUOM}" editable="false" change="procurementChange"></Input>
+
+				<Label text="Numerator Conversion To BUOM" design="Bold"/>
+				<Input value="{SubProcessContext>/procurement/NUMERATOR_CONVERSION_TO_BUOM}" editable="false" change="procurementChange"></Input>
+
+				
+
+				<core:Title text="" />
+				<Label text="Category of International Article Number" design="Bold"/>
+				<Input value="{SubProcessContext>/procurement/CATEGORY_OF_INTERNATION_ARTICLE_NO}" editable="false" change="procurementChange"></Input>
+
+                <Label text="International Article Number" design="Bold"/>
+				<Input value="{SubProcessContext>/procurement/INTERNATIONAL_ARTICLE_NUMBER}" editable="false" change="procurementChange"></Input>
+
+				<Label text="Length UOM" design="Bold"/>
+				<Input value="{SubProcessContext>/procurement/LENGTH_UOM}" editable="false" change="procurementChange"></Input>
+
+				<Label text="Width UOM" design="Bold"/>
+				<Input value="{SubProcessContext>/procurement/WIDTH_UOM}" editable="false" change="procurementChange"></Input>
+
+				<Label text="Height UOM" design="Bold"/>
+				<Input value="{SubProcessContext>/procurement/HEIGHT_UOM}" editable="false" change="procurementChange"></Input>
+
+				<Label text="Unit of Dimension LWM" design="Bold"/>
+				<Input value="{SubProcessContext>/procurement/UNIT_OF_DIMENSION_LWM}" editable="false" change="procurementChange"></Input>
+
+				<Label text="Volume UOM" design="Bold"/>
+				<Input value="{SubProcessContext>/procurement/VOLUME_UOM}" editable="false" change="procurementChange"></Input>
+
+				<Label text="Volume Unit UOM" design="Bold"/>
+				<Input value="{SubProcessContext>/procurement/VOLUME_UNIT_UOM}" editable="false" change="procurementChange"></Input>
+				
+				<Label text="Gross Weight UOM" design="Bold"/>
+				<Input value="{SubProcessContext>/procurement/GROSS_WEIGHT_UOM}" editable="false" change="procurementChange"></Input>
+				
+				<Label text="Weight Unit UOM" design="Bold"/>
+				<Input value="{SubProcessContext>/procurement/WEIGHT_UNIT_UOM}" editable="false" change="procurementChange"></Input>
+
+
+				<Text ></Text>
+				<Text ></Text>
+				</f:content>
+				
+		</f:SimpleForm>
+		   
+    </VBox>
+            
+       
+    
+</core:FragmentDefinition>

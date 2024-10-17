@@ -1,0 +1,56 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+		xmlns:l="sap.ui.layout">
+		 <VBox>
+        	<f:SimpleForm 
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title=""
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="2"
+			singleContainerFullSize="false" >
+			<f:content>
+				<core:Title text="" />
+				<Label text="Catalog Profile" design="Bold"/>
+				<Input value="{SubProcessContext>/quality/CATLOG_PROFILE}" editable="false" change="onQualityChange"/>
+
+				<Label text="QM In-Proc Active" design="Bold"/>
+				<Input value="{SubProcessContext>/quality/QM_IN_PROC_ACTIVE}" editable="false" change="onQualityChange"></Input>
+
+				<Label text="Handling Unit Type" design="Bold"/>
+				<Input value="{SubProcessContext>/quality/HANDLING_UNIT_TYPE}" editable="false" change="onQualityChange"></Input>
+
+				<Label text="Inspection Type Material Combination Is Active" design="Bold"/>
+				<Input value="{SubProcessContext>/quality/INSPECTION_TYPE_MATERIAL_COMBINATION_IS_ACTIVE}" editable="false" change="onQualityChange"></Input>
+
+				<Label text="Minimum Remaining Shelf Life" design="Bold"/>
+				<Input value="{SubProcessContext>/quality/MINIMUM_REMAINING_SHELF_LIFE}" editable="false" change="onQualityChange"></Input>
+                <Text text="{SubProcessContext>/quality/MINIMUM_REMAINING_SHELF_LIFE_TEXT}"></Text> 
+
+				<Label text="Total Shelf Life" design="Bold"/>
+				<Input value="{SubProcessContext>/quality/TOTAL_SHELF_LIFE}" editable="false" change="onQualityChange"></Input>
+                <Text text="{SubProcessContext>/quality/TOTAL_SHELF_LIFE_TEXT}"></Text> 
+
+				<Label text="Period Indicator SLED" design="Bold"/>
+				<Input value="{SubProcessContext>/quality/PERIOD_INDICATOR_SLED}" editable="false" change="onQualityChange"></Input>
+                 <Text text="{SubProcessContext>/quality/PERIOD_INDICATOR_SLED_TEXT}"></Text> 
+
+				<Text ></Text>
+				<Text ></Text>
+				</f:content>
+		</f:SimpleForm>
+  
+    </VBox>
+</core:FragmentDefinition>

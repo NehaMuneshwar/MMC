@@ -1,0 +1,249 @@
+<mvc:View
+    controllerName="com.ibs.materialcreate.initiator.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:object="sap.uxap"
+    xmlns:l="sap.ui.layout"
+    xmlns:suite="sap.suite.ui.commons">
+    <Page>
+        <object:ObjectPageHeader objectTitle="{context>/LengthData}">
+            <object:actions>
+                <Button text="Show Log" id="showLogButton" press="onShowLog" visible="true"/>
+                <Button text="Hide Log" id="hideLogButton" press="onHideLog" visible="false"/>
+            </object:actions>
+        </object:ObjectPageHeader>
+
+       <l:DynamicSideContent
+        id="DynamicSideContent"
+        class="sapUiDSCExplored sapUiContentPadding"
+        containerQuery="true"
+        sideContentVisibility="NeverShow">
+       <l:sideContent>
+            <Toolbar>
+                <Title text="Workflow Log"/>
+                <ToolbarSpacer/>
+            </Toolbar>
+            <layout:VerticalLayout width="100%">
+                <suite:Timeline id="idCombinedTimeline" enableScroll="false" showHeaderBar="false" enableDoubleSided="false" sortOldestFirst="true" content="{combinedModel>/}">
+                    <suite:content>
+                        <suite:TimelineItem
+                            title="{combinedModel>subject}"
+                            text="{path: 'combinedModel>status', formatter: '.formatter.statusModify'}"
+                            dateTime="{combinedModel>startedAt}"
+                            userName="{combinedModel>processor}"
+                            userPicture="sap-icon://person-placeholder">
+                        </suite:TimelineItem>
+                    </suite:content>
+                </suite:Timeline>
+            </layout:VerticalLayout>
+            <!-- <Toolbar>
+                <ToolbarSpacer/>
+                <Button text="Hide Log" id="hideLogFooterButton" press="onHideLog"/>
+            </Toolbar> -->
+        </l:sideContent>
+        <l:mainContent>
+             <object:ObjectPageLayout id="objectPageLayout" showTitleInHeaderContent="false" height="100%">
+                    <object:headerContent>
+                        <layout:VerticalLayout class="header">
+                            <layout:HorizontalLayout allowWrapping="true">
+                                <layout:VerticalLayout class="sapUiMediumMarginEnd">
+                                    <Avatar class="sapUiSmallMarginEnd" src="sap-icon://add-product" displaySize="S"/>
+                                </layout:VerticalLayout>
+                                <layout:VerticalLayout class="sapUiMediumMarginEnd">
+                                    <ObjectStatus text="Request Creation Date"/>
+                                    <ObjectStatus class="sapUiTinyMarginTop" text="{context>/Timestamp}"/>
+                                </layout:VerticalLayout>
+                                <layout:VerticalLayout class="sapUiMediumMarginEnd">
+                                    <ObjectStatus text="Definition ID"/>
+                                    <Link text="{context>/ID}" class="sapUiTinyMarginTop"/>
+                                </layout:VerticalLayout>
+                                <layout:VerticalLayout class="sapUiMediumMarginEnd">
+                                    <ObjectStatus text="Status" press="OnLevelChange"/>
+                                      <Link class="sapUiTinyMarginTop"
+                                          text="{
+                                              parts: [
+                                                  {path: 'context>/ShowStatus'},
+                                                  {path: 'context>/LevelsName'}
+                                              ],
+                                              formatter: '.formatter.concatenateStatusAndSubject'
+                                          }"/>
+                                </layout:VerticalLayout>
+                            </layout:HorizontalLayout>
+                        </layout:VerticalLayout>
+                    </object:headerContent>
+
+                    <object:sections>
+                        <object:ObjectPageSection title="Initiator">
+                            <object:subSections>
+                                <object:ObjectPageSubSection>
+                                    <object:blocks>
+                                        <f:Form id="formcontainer" editable="true">
+                                            <f:layout>
+                                                <f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12"
+                                                                        adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0"
+                                                                        emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2" singleContainerFullSize="false"/>
+                                            </f:layout>
+                                            <f:formContainers>
+                                                <f:FormContainer>
+                                                    <f:formElements>
+                                                        <f:FormElement>
+                                                            <f:label>
+                                                                <Label text="Material Type" design="Bold"/>
+                                                            </f:label>
+                                                            <f:fields>
+                                                                <HBox>
+                                                                    <items>
+                                                                        <Input id="mtype"
+                                                                               value="{contextapidata>/startEvent/initiator/MATERIAL_TYPE}"
+                                                                               editable="false" width="120px"/>
+                                                                        <Text id="mtypename"
+                                                                              text="{contextapidata>/startEvent/initiator/MATERIAL_TYPE_NAME}"
+                                                                              class="sapUiTinyMarginBegin"/>
+                                                                    </items>
+                                                                </HBox>
+                                                            </f:fields>
+                                                        </f:FormElement>
+                                                        <f:FormElement>
+                                                            <f:label>
+                                                                <Label text="Plant" design="Bold"/>
+                                                            </f:label>
+                                                            <f:fields>
+                                                                <HBox>
+                                                                    <items>
+                                                                        <Input id="plant"
+                                                                               value="{contextapidata>/startEvent/initiator/PLANT}"
+                                                                               width="120px" editable="false"/>
+                                                                        <Text id="mtypenameplant"
+                                                                              text="{contextapidata>/startEvent/initiator/PLANT_NAME}"
+                                                                              class="sapUiTinyMarginBegin"/>
+                                                                    </items>
+                                                                </HBox>
+                                                            </f:fields>
+                                                        </f:FormElement>
+                                                        <f:FormElement>
+                                                            <f:label>
+                                                                <Label text="Company" design="Bold"/>
+                                                            </f:label>
+                                                            <f:fields>
+                                                                <HBox>
+                                                                    <items>
+                                                                        <Input value="{contextapidata>/startEvent/initiator/COMPANY}"
+                                                                               width="120px" editable="false"/>
+                                                                        <Text text="{contextapidata>/startEvent/initiator/COMPANY_NAME}"
+                                                                              class="sapUiTinyMarginBegin"/>
+                                                                    </items>
+                                                                </HBox>
+                                                            </f:fields>
+                                                        </f:FormElement>
+                                                        <f:FormElement>
+                                                            <f:label>
+                                                                <Label text="Material Group" design="Bold"/>
+                                                            </f:label>
+                                                            <f:fields>
+                                                                <HBox>
+                                                                    <items>
+                                                                        <Input value="{contextapidata>/startEvent/initiator/MATERIAL_GROUP}"
+                                                                               width="120px" editable="false"/>
+                                                                        <Text text="{contextapidata>/startEvent/initiator/MATERIAL_GROUP_TEXT}"
+                                                                              class="sapUiTinyMarginBegin"/>
+                                                                    </items>
+                                                                </HBox>
+                                                            </f:fields>
+                                                        </f:FormElement>
+                                                    </f:formElements>
+                                                    <f:FormElement>
+                                                        <f:label>
+                                                            <Label text="Material Description" design="Bold"/>
+                                                        </f:label>
+                                                        <f:fields>
+                                                            <Input id="materialdescription"
+                                                                   value="{contextapidata>/startEvent/initiator/MATERIAL_DESCRIPTION}"
+                                                                   width="200px" editable="false"/>
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                </f:FormContainer>
+                                                <f:FormContainer>
+                                                    <f:formElements>
+                                                        <f:FormElement>
+                                                            <f:label>
+                                                                <Label text="Base Unit Of Measure" design="Bold"/>
+                                                            </f:label>
+                                                            <f:fields>
+                                                                <HBox>
+                                                                    <items>
+                                                                        <Input value="{contextapidata>/startEvent/initiator/BASE_UNIT_OF_MEASURE}"
+                                                                               width="120px" editable="false"/>
+                                                                        <Text text="{contextapidata>/startEvent/initiator/UOM_LONG_NAME}"
+                                                                              class="sapUiTinyMarginBegin"/>
+                                                                    </items>
+                                                                </HBox>
+                                                            </f:fields>
+                                                        </f:FormElement>
+                                                        <f:FormElement>
+                                                            <f:label>
+                                                                <Label text="Division" design="Bold"/>
+                                                            </f:label>
+                                                            <f:fields>
+                                                                <HBox>
+                                                                    <items>
+                                                                        <Input value="{contextapidata>/startEvent/initiator/DIVISION}"
+                                                                               width="120px" editable="false"/>
+                                                                        <Text text="{contextapidata>/startEvent/initiator/DIVISION_NAME}"
+                                                                              class="sapUiTinyMarginBegin"/>
+                                                                    </items>
+                                                                </HBox>
+                                                            </f:fields>
+                                                        </f:FormElement>
+                                                        <f:FormElement>
+                                                            <f:label>
+                                                                <Label text="Category" design="Bold"/>
+                                                            </f:label>
+                                                            <f:fields>
+                                                                <Input id="dimension"
+                                                                       value="{contextapidata>/startEvent/initiator/CATEGORY}"
+                                                                       width="200px" editable="false"/>
+                                                            </f:fields>
+                                                        </f:FormElement>
+                                                        <f:FormElement>
+                                                            <f:label>
+                                                                <Label text="GenItem" design="Bold"/>
+                                                            </f:label>
+                                                            <f:fields>
+                                                                <HBox>
+                                                                    <items>
+                                                                        <Input value="{contextapidata>/startEvent/initiator/GEN_ITEM_CAT_GROUP}"
+                                                                               width="120px" editable="false"/>
+                                                                        <Text text="{contextapidata>/startEvent/initiator/GEN_ITEM_CAT_GROUP_TEXT}"
+                                                                              class="sapUiTinyMarginBegin"/>
+                                                                    </items>
+                                                                </HBox>
+                                                            </f:fields>
+                                                        </f:FormElement>
+                                                        <f:FormElement>
+                                                            <f:label>
+                                                                 <Label text="Material Long Description" design="Bold"/>
+                                                            </f:label>
+                                                            <f:fields>
+                                                                <Input id="textarea"
+                                                                       value="{contextapidata>/startEvent/initiator/MATERIAL_LONG_DESCRIPTION}"
+                                                                       width="200px" editable="false"/>
+                                                            </f:fields>
+
+                                                        </f:FormElement>
+                                                    </f:formElements>
+                                                </f:FormContainer>
+                                            </f:formContainers>
+                                        </f:Form>
+                                    </object:blocks>
+                                </object:ObjectPageSubSection>
+                            </object:subSections>
+                        </object:ObjectPageSection>
+                    </object:sections>
+                </object:ObjectPageLayout>
+            </l:mainContent>
+        </l:DynamicSideContent>
+    </Page>
+</mvc:View>

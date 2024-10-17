@@ -1,0 +1,59 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+		xmlns:l="sap.ui.layout">
+		 <VBox>
+        	<f:SimpleForm 
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title=""
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="2"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="Store Location"/>
+				<Input value="{SubProcessContext>/store/STORAGE_LOCATION}" editable="false" change="onQualityChange"/>
+				<Text text="{SubProcessContext>/store/STORAGE_LOCATION_TEXT}"></Text>
+				<!-- <Input value="{context>/store/STORAGE_LOCATION}" editable="{context>/STORE}" change="onQualityChange"/> -->
+
+				<Label text="Storage Bin"/>
+				<Input value="{SubProcessContext>/store/STORAGE_BIN}" editable="false" change="onQualityChange"/>
+				<Text text="{SubProcessContext>/store/STORAGE_BIN_TEXT}"></Text>
+
+				<Label text="Storage Bin"/>
+				<Input value="{SubProcessContext>/store/STORAGE_BIN}" editable="false" change="onQualityChange"/>
+				<Text text="{SubProcessContext>/store/STORAGE_BIN_TEXT}"></Text>
+
+				<Label text="Time Unit"/>
+				<Input value="{SubProcessContext>/store/TIME_UNIT}" editable="false" change="onQualityChange"/>
+				<Text text="{SubProcessContext>/store/TIME_UNIT_TEXT}"></Text>
+
+				<Label text="Batch Require Indicator" />
+				<Input value="{SubProcessContext>/store/BATCH_MGMT_REQUIRE_INDICATOR}" editable="false" change="onQualityChange"/>
+				<Text text="{SubProcessContext>/store/BATCH_MGMT_REQUIRE_INDICATOR_TEXT}"/>
+
+			   <Label text="Maximum Storage Period" />
+				<Input value="{SubProcessContext>/store/TIME_UNIT}" editable="false" change="onQualityChange"/>
+				<Text text="{SubProcessContext>/store/TIME_UNIT_TEXT}"/>
+
+				
+				
+
+				
+				
+				</f:content>
+		</f:SimpleForm>
+  
+    </VBox>
+</core:FragmentDefinition>

@@ -1,0 +1,15 @@
+/* Enter your custom styles here */
+.statusSuccess {
+    color: green;
+}
+
+.statusError {
+    color: red;
+}
+
+.statusWarning {
+    color: orange;
+}
+.orangeText {
+    color: orange !important;
+}

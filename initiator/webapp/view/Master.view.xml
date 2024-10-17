@@ -1,0 +1,28 @@
+<mvc:View controllerName="com.ibs.materialcreate.initiator.controller.Master"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:l="sap.ui.layout">
+   <Page title="Material List" showHeader="true">
+   <headerContent> <Button text="" icon="sap-icon://add" press="OnAddButton" class="sapUiSmallMargin"/></headerContent>
+  
+<content>
+<SearchField id="searchFieldId" width="100%" search="handleShowSearchBox" placeholder="Search" showRefreshButton="true"/>
+  <List id="listId" mode="SingleSelectMaster" selectionChange="OnIdPress" headerText="" items="{apidata>/}" swipe="handleSwipe" growing="true" growingThreshold="2000" growingScrollToLoad="true">
+                <items>
+		 	<ObjectListItem
+			   title="Material Creation-{path: 'apidata>attributes/0/value'}"
+				type="Active"
+				press="onListItemPress">
+			<firstStatus>
+				<ObjectStatus
+					text="{apidata>status}"
+					state="Success" />
+			</firstStatus>
+			<ObjectAttribute text="Date: {path: 'apidata>startedAt', formatter: '.formatDate'}" />
+			<ObjectAttribute text="{apidata>rootInstanceId}" />
+			</ObjectListItem>
+                </items>
+            </List>
+      </content>
+   </Page>
+</mvc:View>

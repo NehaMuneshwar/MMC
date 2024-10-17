@@ -1,0 +1,115 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+		xmlns:l="sap.ui.layout">
+		 <VBox>
+		<f:SimpleForm 
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title=""
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="2"
+			singleContainerFullSize="false">
+			<f:content>
+				<core:Title text="" />
+				<Label text="Country" design="Bold"/>
+				<Input value="{approvalContextModel>/startEvent/finance/COUNTRY_TEXT}" editable="false" change="FinanceChange"/>
+
+				<Label text="Control Code" design="Bold"/>
+				<Input value="{approvalContextModel>/startEvent/finance/CONTROL_CODE}" editable="false" change="FinanceChange"/>
+
+				<Label text="Profit Center" design="Bold"/>
+				<Input value="{approvalContextModel>/startEvent/finance/PROFIT_CENTER}" editable="false" change="FinanceChange"></Input>
+
+				<Label text="Valuation Type" design="Bold"/>
+				<Input value="{approvalContextModel>/startEvent/finance/VALUATION_TYPE}" editable="false" change="FinanceChange"></Input>
+
+				<Label text="Valuation Category" design="Bold"/>
+				<Input value="{approvalContextModel>/startEvent/finance/VALUATION_CATEGORY}" editable="false" change="FinanceChange"></Input>
+
+				<Label text="Valuation Class" design="Bold"/>
+				<Input value="{approvalContextModel>/startEvent/finance/VALUATION_CLASS}" editable="false" change="FinanceChange"></Input>
+
+				<Label text="Price Control Indicator" design="Bold"/>
+				<Input value="{approvalContextModel>/startEvent/finance/PRICE_CONTROL_INDICATOR}" editable="false" change="FinanceChange"></Input>
+
+				<Label text="Moving Avg Price Per Periodic Unit Price" design="Bold" />
+				<Input value="{approvalContextModel>/startEvent/finance/MOVING_AVG_PRICE_PER_PERIODIC_UNIT_PRICE}" editable="false" change="FinanceChange"></Input>
+
+				<Label text="Price Unit" design="Bold"/>
+				<Input value="{approvalContextModel>/startEvent/finance/PRICE_UNIT}" editable="false" change="FinanceChange"></Input>
+
+				<Label text="Future Price"  design="Bold"/>
+				<Input value="{approvalContextModel>/startEvent/finance/FUTURE_PRICE}" editable="false" change="FinanceChange"></Input>
+
+				<Label text="Origin of Material" design="Bold"/>
+				<Input value="{approvalContextModel>/startEvent/finance/ORIGIN_OF_MATERIAL}" editable="false" change="FinanceChange"></Input>
+
+				<Label text="Material Cost with Quantity Structure" design="Bold"/>
+				<Input value="{approvalContextModel>/startEvent/finance/MATERIAL_COST_WITH_QUANTITY_STRUCTURE}" editable="false" change="FinanceChange"></Input>
+
+				<Label text="Material Related Origin" design="Bold"/>
+				<Input value="{approvalContextModel>/startEvent/finance/MATERIAL_RELATED_ORIGIN}" editable="false" change="FinanceChange"></Input>
+
+				<core:Title text="" />
+				<Label text="Future Planned Price 1" design="Bold"/>
+				<Input value="{approvalContextModel>/startEvent/finance/FUTURE_PLANNED_PRICE_1}" editable="false" change="FinanceChange"></Input>
+
+				<Label text="Date From Future Plan1 Valid" design="Bold"/>
+				<Input value="{approvalContextModel>/startEvent/finance/DATE_FROM_FUTURE_PLAN1_VALID}" editable="false" change="FinanceChange"></Input>
+
+				<Label text="Future Planned Price 2" design="Bold"/>
+				<Input value="{approvalContextModel>/startEvent/finance/FUTURE_PLANNED_PRICE_2}" editable="false" change="FinanceChange"></Input>
+
+				<Label text="Date From Future Plan2 Valid" design="Bold"/>
+				<Input value="{approvalContextModel>/startEvent/finance/DATE_FROM_FUTURE_PLAN2_VALID}" editable="false" change="FinanceChange"></Input>
+
+				
+				<Text ></Text>
+				<Text ></Text>
+			</f:content>
+		</f:SimpleForm>
+     <!-- <Toolbar>
+            <ToolbarSpacer />
+            <Button icon="sap-icon://accept" text="Submit" press="OnLevel2" type="Emphasized" />
+         </Toolbar> -->
+
+		 <Table id="financeId"
+			inset="false" class="tableClass"
+			items="{approvalContextModel>/startEvent/finance/to_SalesText/results}">
+			
+			<columns>
+				<Column width="auto">
+					<Text text="Country" />
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" width="auto">
+					<Text text="Tax Category" />
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" width="auto">
+					<Text text="Tax Classification" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem vAlign="Middle">
+					<cells>
+						<Text text="{approvalContextModel>Country_Text}" />
+						<Text text="{approvalContextModel>TaxCategory_Text}" />
+						<Text text="{approvalContextModel>TaxClassification_Text}" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+    </VBox>
+	
+</core:FragmentDefinition>

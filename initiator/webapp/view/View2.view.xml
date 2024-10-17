@@ -1,0 +1,267 @@
+<mvc:View controllerName="com.ibs.materialcreate.initiator.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout" xmlns:uxap="sap.uxap"  xmlns:html="http://www.w3.org/1999/xhtml" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" >
+
+    <App>	
+        <pages>
+            <Page title="{i18n>title}" showSubHeader="false" showHeader="false" showFooter="true">
+                <content>
+	<uxap:ObjectPageLayout upperCaseAnchorBar="false">
+                        <uxap:headerTitle>
+                            <uxap:ObjectPageHeader objectTitle="Material Master Creation"></uxap:ObjectPageHeader>
+                        </uxap:headerTitle>
+                        <uxap:sections>
+                            <!-- General Information -->
+                            <uxap:ObjectPageSection titleUppercase="false" title="Material Master Creation" titleLevel="H6" showTitle="false">
+                                <uxap:subSections>
+                                    <uxap:ObjectPageSubSection>
+                                        <uxap:blocks>
+										
+									
+										
+		<MessageStrip
+		       id="messageStrip"
+				text="{/error}"
+				type="Error"
+				enableFormattedText="true"
+				showIcon="true"
+				visible="false"
+				showCloseButton="true"
+				class="sapUiMediumMarginBottom">
+			</MessageStrip>
+										
+		<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormChange480_Trial"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="INITIATOR"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="2"
+			singleContainerFullSize="false" >
+			<f:content>
+				<core:Title text="" />
+				<Label text="Material Type" design="Bold" required="true"/>
+				<ComboBox
+				editable="{context>/EditableMain}"
+					 id="materialtype"
+					 change="onChange"
+					showSecondaryValues= "true"
+					filterSecondaryValues= "true"
+					 value="{context>/MATERIALTYPE}" 
+					selectedKey="{/MATERIALTYPE}"
+					items="{
+						path: 'MaterialTypeModel>/results',
+						sorter: { path: 'MaterialTypeName' }
+					}">
+					<core:ListItem key="{MaterialTypeModel>MaterialTypeName}" text="{MaterialTypeModel>MaterialType}" additionalText="{MaterialTypeModel>MaterialTypeName}"/>
+				</ComboBox>
+				 <Text text="{context>/MaterialTypeName}" id="Mdescription">
+			</Text>
+
+
+                 <Label text="Company" design="Bold" required="true"/>
+				           <ComboBox
+								 id="company"
+								 filterSecondaryValues= "true"
+								 change="onChange2"
+								  value="{context>/COMPANYNAME}" 
+								editable="{context>/EditableMain}"
+			                     showSecondaryValues= "true"
+								 selectedKey="{/COMPANYNAME}"
+			                    
+			                       items="{
+				                 path: 'CompanyTypeModel>/results',
+				               sorter: { path: 'CompanyCodeName'}
+			                     }">
+			               <core:ListItem key="{CompanyTypeModel>CompanyCodeName}" text="{CompanyTypeModel>CompanyCode}" additionalText="{CompanyTypeModel>CompanyCodeName}"/>
+		                   </ComboBox>
+                         <Text text="{context>/CompanyCodeName}" id="companydesc">
+						</Text>
+
+				<Label text="Plant" design="Bold" required="true"/>
+				          <!-- <ComboBox
+								 value="{context>/PLANT}"
+								 change="onChange1" 
+								 editable="{context>/EditableMain}"
+								 id="plantInput"
+			                     showSecondaryValues= "true"
+			                    width="300px"
+			                       items="{
+				                 path: 'PlantModel>/results',
+				               sorter: { path: 'PlantName' }
+			                     }">
+			               <core:ListItem key="{PlantModel>PlantName}" text="{PlantModel>Plant}" additionalText="{PlantModel>PlantName}"/>
+						     <core:ListItem key="{PlantModel>Plant}" text="{PlantModel>PlantName}" additionalText="{PlantModel>Plant}"/>
+		                   </ComboBox> -->
+						<ComboBox
+					id="plantInput"
+					 change="onChange1" 
+					showSecondaryValues= "true"
+					filterSecondaryValues= "true"
+					editable="{context>/plantfield}"
+					value="{context>/PLANT}"
+					selectedKey="{/ValuationArea}"
+					items="{
+						path: 'PlantModel>/results',
+						sorter: { path: 'PlantName' }
+					}">
+					<core:ListItem key="{PlantModel>PlantName}" text="{PlantModel>ValuationArea}" additionalText="{PlantModel>PlantName}"/>
+				</ComboBox>
+						   <Text text="{context>/PlantName}" id="plantdesc">
+					
+				</Text>
+				<Label text="Material Group" design="Bold" required="true"/>
+				<ComboBox
+							    change="onChange4"
+								 filterSecondaryValues= "true"
+							     id="Mategrouprial"
+								 required="true"
+								 value="{context>/MATERIALGROUPTEXT}" 
+								editable="{context>/EditableTemp}"
+								 selectedKey="{/MaterialGroupText}"
+			                     showSecondaryValues= "true"
+			                    
+			                       items="{
+				                 path: 'MaterialGroupModel>/results',
+				               sorter: { path: 'MaterialGroupText' }
+			                     }">
+			               <core:ListItem key="{MaterialGroupModel>MaterialGroupText}" text="{MaterialGroupModel>MaterialGroup}" additionalText="{MaterialGroupModel>MaterialGroupText}"/>
+		                   </ComboBox>
+                         <Text text="{context>/MaterialGroupText}" id="grouptextdesc">
+						</Text>
+               
+                <Label text="Material Description" design="Bold"/>
+				<Input id="materialdescription" value="{context>/MaterialDescription}"  editable="{context>/EditableTemp}" placeholder="" valueState="{/RequesterDetails/RequesterEmailState}" liveChange="Onlivechange"/>
+                
+
+				<core:Title text="" />
+				<Label text="Unit Of Measure" design="Bold" required="true"/>
+				           <ComboBox
+								change="onChange5"
+								value="{context>/UNITOFMEASURE}" 
+								filterSecondaryValues= "true"
+								id="basemeasure"
+								required="true"
+								selectedKey="{/UnitOfMeasure}"
+								editable="{context>/EditableTemp}"
+			                     showSecondaryValues= "true"
+			                    width="300px"
+			                       items="{
+				                 path: 'UnitOfMeasureModel>/results',
+				               sorter: { path: 'UnitOfMeasureLongName' }
+			                     }">
+			               <core:ListItem key="{UnitOfMeasureModel>UnitOfMeasureLongName}" text="{UnitOfMeasureModel>UnitOfMeasure}" additionalText="{UnitOfMeasureModel>UnitOfMeasureLongName}"/>
+		                   </ComboBox>
+						   	<Text text="{context>/UnitOfMeasureLongName}" id="unitofmeasuredesc">
+					
+				</Text>
+                          <Label text="Division" design="Bold" required="true"></Label>
+                           <ComboBox
+								change="onChange6"
+								 value="{context>/Division}" 
+								id="division"
+								selectedKey="{/DivisionName}"
+								filterSecondaryValues= "true"
+								required="true"
+								editable="{context>/EditableTemp}"
+			                     showSecondaryValues= "true"
+			                    width="250px"
+			                       items="{
+				                 path: 'DivisionModel>/results',
+				               sorter: { path: 'Division' }
+			                     }">
+			               <core:ListItem key="{DivisionModel>DivisionName}" text="{DivisionModel>Division}" additionalText="{DivisionModel>DivisionName}"/>
+		                   </ComboBox>
+                           <Text text="{context>/DivisionName}" id="divisiondesc">
+						
+                           </Text>
+
+			
+				<Label text="Gen Item" design="Bold"/>
+				         <ComboBox
+								 id="gentitem"
+								 filterSecondaryValues= "true"
+								 change="onChange7"
+								 value="{context>/GenItem}" 
+								editable="{context>/EditableTemp}"
+			                     showSecondaryValues= "true"
+								 selectedKey="{/ItemCategoryGroup}"
+			                    
+			                       items="{
+				                 path: 'GenModel>/results',
+				               sorter: { path: 'ItemCategoryGroupName'}
+			                     }">
+			               <core:ListItem key="{GenModel>ItemCategoryGroupName}" text="{GenModel>ItemCategoryGroup}" additionalText="{GenModel>ItemCategoryGroupName}"/>
+		                   </ComboBox>
+                         <Text text="{context>/ItemCategoryGroupName}" id="genttext">
+				
+				      </Text>
+
+				<Label text="Category" design="Bold"/>
+				 <Input  id="dimension" value="{context>/Category}" placeholder="" valueState="{/RequesterDetails/RequesterEmailState}"   editable="{context>/EditableTemp}" liveChange="Onlivechange" />
+
+				  <Label text="Material Long Description" design="Bold"></Label>
+                 <TextArea value="{aliasDraft>/MeetingObjective}" rows="2" maxLength="200" liveChange="onInputChange" id="textarea" showExceededText="true" >
+           
+                 </TextArea>
+				  
+				 </f:content>
+		</f:SimpleForm>
+
+		   
+		
+	</VBox>
+	<!-- <f:SimpleForm class="sapUiSizeCompact,sapUiEnormousMarginTop" id="SimpleFormCh" editable="true" layout="ResponsiveGridLayout" title=""
+							singleContainerFullSize="false">
+							<f:content>
+							<Label design="Bold" text="Objective of Meeting" required="true">
+									
+								</Label>
+								<TextArea value="{aliasDraft>/MeetingObjective}" rows="4" maxLength="200" liveChange="onInputChange" width="530px">
+									
+								</TextArea>
+							</f:content>
+						</f:SimpleForm> -->
+	 
+ 
+ 	
+	
+                                        </uxap:blocks>
+                                    </uxap:ObjectPageSubSection>
+                                </uxap:subSections>
+                            </uxap:ObjectPageSection>
+                            <!-- Additional Information -->
+                            <uxap:ObjectPageSection titleUppercase="false" title="" titleLevel="H6" showTitle="true" visible="false">
+                                <uxap:subSections>
+                                    <uxap:ObjectPageSubSection>
+                                        <uxap:blocks>
+                                        <VBox >
+											</VBox>
+                                        </uxap:blocks>
+                                    </uxap:ObjectPageSubSection>
+                                </uxap:subSections>
+                            </uxap:ObjectPageSection>
+                        </uxap:sections>
+                    </uxap:ObjectPageLayout>
+                </content>
+                <footer>
+                    <OverflowToolbar>
+                        <ToolbarSpacer/>
+						 
+                        <Button text="SUBMIT" press="OnSubmit" enabled="true" type="Emphasized" class="sapUiTinyMarginEnd"/>
+                    </OverflowToolbar>
+                </footer>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

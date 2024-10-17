@@ -1,0 +1,129 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout" xmlns:m="sap.uxap">
+    
+	<VBox>
+		<f:SimpleForm 
+			editable="true"
+		    layout="ResponsiveGridLayout"
+			title=""
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="2"
+			singleContainerFullSize="false" >
+			<f:content>
+				<core:Title text="" />
+				<Label text="Sales Organization" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/SALES_ORGANIZATION}" editable="false" change="onSalesMarketingFieldChange"/>
+                <Text text="{SubProcessContext>/sales_marketing/SALES_ORGANIZATION_TEXT}"></Text>
+
+				<Label text="Distribution Channel" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/DISTRIBUTION_CHANNEL}" editable="false" change="onSalesMarketingFieldChange"></Input>
+                <Text text="{SubProcessContext>/sales_marketing/DISTRIBUTION_CHANNEL_TEXT}"></Text>
+
+				<Label text="Sales Unit" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/SALES_UNIT}" editable="false" change="onSalesMarketingFieldChange"></Input>
+                <Text text="{SubProcessContext>/sales_marketing/SALES_UNIT_TEXT}"></Text>
+
+				<Label text="Delivering Plant" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/DELIVERING_PLANT}" editable="false" change="onSalesMarketingFieldChange"></Input>
+                <Text text="{SubProcessContext>/sales_marketing/DELIVERING_PLANT_TEXT}"></Text>
+
+               <Label text="UOM Delivery Unit" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/UOM_DELIVERY_UNIT}" editable="false" change="onSalesMarketingFieldChange"></Input>
+              <Text text="{SubProcessContext>/sales_marketing/UOM_DELIVERY_UNIT_TEXT}"></Text>
+
+               <Label text="Rounding Profile" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/ROUNDING_PROFILE}" editable="false" change="onSalesMarketingFieldChange"></Input>
+				<Text text="{SubProcessContext>/sales_marketing/ROUNDING_PROFILE_TEXT}"></Text>
+
+                <Label text="Material Statistic Group" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/MATERIAL_STATISTIC_GROUP}" editable="false" change="onSalesMarketingFieldChange"></Input>
+				<Text text="{SubProcessContext>/sales_marketing/MATERIAL_STATISTIC_GROUP_TEXT}"></Text>
+
+                <Label text="Item Category Group" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/ITEM_CATEGORY_GROUP}" editable="false" change="onSalesMarketingFieldChange"></Input>
+				<Text text="{SubProcessContext>/sales_marketing/ITEM_CATEGORY_GROUP_TEXT}"></Text>
+
+
+				<Label text="Cash Discount Indicator" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/CASH_DISCOUNT_INDICATOR}" editable="false" change="onSalesMarketingFieldChange"></Input>
+
+				<Label text="Min Order Quantity BUOM" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/MIN_ORDER_QUANTITY_BUOM}" editable="false" change="onSalesMarketingFieldChange"></Input>
+
+				<Label text="Min Delivery Quantity" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/MIN_DELIVERY_QUANTITY}" editable="false" change="onSalesMarketingFieldChange"></Input>
+
+				<Label text="Delivery Unit" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/DELIVERY_UNIT}" editable="false" change="onSalesMarketingFieldChange"></Input>
+
+				
+
+				<core:Title text="" />
+				<Label text="Pricing Reference Material" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/PRICING_REFERENCE_MATERIAL}" editable="false" change="onSalesMarketingFieldChange"></Input>
+				<Text text="{SubProcessContext>/sales_marketing/PRICING_REFERENCE_MATERIAL_TEXT}"></Text>
+
+				<Label text="Material Price Group" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/MATERIAL_PRICE_GROUP}" editable="false" change="onSalesMarketingFieldChange"></Input>
+                <Text text="{SubProcessContext>/sales_marketing/MATERIAL_PRICE_GROUP_TEXT}"></Text>
+
+				<Label text="Account Assignment Group" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/ACCOUNT_ASSIGNMENT_GROUP}" editable="false" change="onSalesMarketingFieldChange"></Input>
+               <Text text="{SubProcessContext>/sales_marketing/ACCOUNT_ASSIGNMENT_GROUP_TEXT}"></Text>
+
+				<Label text="Commission Group" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/COMMISSION_GROUP}" editable="false" change="onSalesMarketingFieldChange"></Input>
+               <Text text="{SubProcessContext>/sales_marketing/COMISSION_GROUP_TEXT}"></Text>
+
+				<Label text="Material Group 1" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/MATERIAL_GROUP_1}" editable="false" change="onSalesMarketingFieldChange"></Input>
+               <Text text="{SubProcessContext>/sales_marketing/MATERIAL_GROUP_1_TEXT}"></Text>
+
+				<Label text="Material Group 2" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/MATERIAL_GROUP_2}" editable="false" change="onSalesMarketingFieldChange"></Input>
+               <Text text="{SubProcessContext>/sales_marketing/MATERIAL_GROUP_2_TEXT}"></Text>
+
+				<Label text="Material Group 3" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/MATERIAL_GROUP_3}" editable="false" change="onSalesMarketingFieldChange"></Input>
+                <Text text="{SubProcessContext>/sales_marketing/MATERIAL_GROUP_3_TEXT}"></Text>
+
+				<Label text="Material Group 4" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/MATERIAL_GROUP_4}" editable="false" change="onSalesMarketingFieldChange"></Input>
+               <Text text="{SubProcessContext>/sales_marketing/MATERIAL_GROUP_4_TEXT}"></Text>
+
+				<Label text="Material Group 5" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/MATERIAL_GROUP_5}" editable="false" change="onSalesMarketingFieldChange"></Input>
+                <Text text="{SubProcessContext>/sales_marketing/MATERIAL_GROUP_5_TEXT}"></Text>
+
+				<Label text="Transportation Group" design="Bold" />
+				<Input value="{SubProcessContext>/sales_marketing/TRANSPORTATION_GROUP}" editable="false" change="onSalesMarketingFieldChange"></Input>
+               <Text text="{SubProcessContext>/sales_marketing/TRANSPORTATION_GROUP_TEXT}"></Text>
+
+				<Label text="Loading Group" design="Bold"/>
+				<Input value="{SubProcessContext>/sales_marketing/LOADING_GROUP}" editable="false" change="onSalesMarketingFieldChange"></Input>
+               <Text text="{SubProcessContext>/sales_marketing/LOADING_GROUP_TEXT}"></Text>
+
+				<Text ></Text>
+				<Text ></Text>
+			</f:content>
+		</f:SimpleForm>
+        <!-- <Toolbar>
+            <ToolbarSpacer />
+            <Button icon="sap-icon://accept" text="Submit" press="OnLevel1" type="Emphasized" />
+         </Toolbar> -->
+    </VBox>
+	
+</core:FragmentDefinition>
